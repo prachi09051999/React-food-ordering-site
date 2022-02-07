@@ -103,11 +103,15 @@ const CartProvider = (props) => {
     dispatchCartAction({type: 'REDUCE',id:id});
   }
 
+  const clearItemsHandler = () => {
+    dispatchCartAction({type:'CLEAR'});
+  } 
   const cartData = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemHandler,
-    removeItem: removeItemHandler
+    removeItem: removeItemHandler,
+    clearCart: clearItemsHandler
   }
 
   // wrapping elements in Provider to get globally access of stored data into its children elements
